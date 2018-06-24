@@ -1,0 +1,3 @@
+function doLogin() {
+	$('#loginForm').submit();
+}

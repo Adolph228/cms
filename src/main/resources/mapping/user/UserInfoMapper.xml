@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.dao.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.neo.entity.UserInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="DATE" property="salt" />
+    <result column="state" jdbcType="VARCHAR" property="state" />    
+  </resultMap>
+  <select id="findByUsername" resultMap="BaseResultMap" >
+  		select * from user_info where username = #{username}
+  </select>
+</mapper>

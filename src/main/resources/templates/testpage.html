@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>用户列表</title>
+
+</head>
+<body>
+<div style="width: 1000px;" >
+    <table style="border-width: 1px;border-style: dashed;">
+        <tr>
+            <td>ID</td>
+            <td>标题</td>
+            <td>日期</td>
+        </tr>
+        <tr th:each="data:${page.list}">
+            <td th:text="${data.id}"></td>
+            <td th:text="${data.title}"></td>
+            <td th:text="${#dates.format(data.publishDate,'yyyy-MM-dd HH:mm:ss')}"></td>
+        </tr>
+    </table>
+    <div th:include="page :: page"  url="/topicImg"></div>
+</div>
+    
+</body>
+</html>
